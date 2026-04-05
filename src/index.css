@@ -1,0 +1,33 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Outfit", sans-serif;
+
+  --color-gold: #D4AF37;
+  --color-gold-light: #F1D592;
+  --color-silver: #C0C0C0;
+  --color-charcoal: #1A1A1A;
+}
+
+@layer base {
+  body {
+    @apply bg-white text-charcoal antialiased;
+  }
+}
+
+.glass-nav {
+  @apply bg-white/80 backdrop-blur-md border-b border-gray-100;
+}
+
+.gold-gradient {
+  background: linear-gradient(135deg, #D4AF37 0%, #F1D592 100%);
+}
+
+/* Swiper styles */
+.swiper-button-next, .swiper-button-prev {
+  color: #D4AF37 !important;
+}
+.swiper-pagination-bullet-active {
+  background: #D4AF37 !important;
+}

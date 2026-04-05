@@ -1,0 +1,85 @@
+import React from 'react';
+import { Helmet } from 'react-helmet-async';
+import { motion } from 'motion/react';
+import { ChevronRight, CheckCircle } from 'lucide-react';
+import PageHero from '../components/PageHero';
+
+const features = [
+  'Perfilado y diseño de barba personalizado',
+  'Afeitado clásico con navaja',
+  'Toalla caliente para abrir poros',
+  'Aceites esenciales hidratantes',
+  'Acabado con productos de alta gama',
+];
+
+const ServicioBarba = () => (
+  <>
+    <Helmet>
+      <title>Barba Ritual | Barbería Ricardo David – Guanare, Venezuela</title>
+      <meta name="description" content="Afeitado clásico y perfilado de barba en Guanare, Portuguesa. Toalla caliente, navaja y aceites esenciales. Barbería Ricardo David." />
+      <meta name="keywords" content="arreglo de barba guanare, afeitado clásico guanare, barbería portuguesa, perfilado barba venezuela" />
+      <link rel="canonical" href="https://barberiaricarddavid.com/servicios/barba" />
+      <meta property="og:title" content="Barba Ritual | Barbería Ricardo David" />
+      <meta property="og:description" content="Afeitado clásico con toalla caliente y aceites esenciales en Guanare, Venezuela." />
+      <meta property="og:type" content="website" />
+    </Helmet>
+
+    <PageHero
+      tag="Tradición y precisión"
+      title="Barba"
+      highlight="Ritual"
+      description="Afeitado clásico con toalla caliente y aceites esenciales. Una experiencia que revitaliza y define tu estilo."
+      image="https://images.unsplash.com/photo-1599351431247-f10b21ce49ac?auto=format&fit=crop&q=75&w=1920"
+    />
+
+    <section className="py-20 bg-white">
+      <div className="max-w-4xl mx-auto px-6">
+        <motion.div
+          initial={{ opacity: 0, y: 40 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.7 }}
+          viewport={{ once: true }}
+          className="text-center mb-14"
+        >
+          <h2 className="text-3xl md:text-4xl font-display font-bold mb-4">¿Qué incluye el <span className="text-gold">Barba Ritual</span>?</h2>
+          <p className="text-gray-500 max-w-xl mx-auto">Una experiencia premium para el cuidado de tu barba.</p>
+        </motion.div>
+
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-14">
+          {features.map((f, i) => (
+            <motion.div
+              key={i}
+              initial={{ opacity: 0, x: -30 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ delay: i * 0.1, duration: 0.5 }}
+              viewport={{ once: true }}
+              className="flex items-center gap-3 bg-gray-50 p-4 rounded-2xl"
+            >
+              <CheckCircle className="text-gold w-5 h-5 shrink-0" />
+              <span className="text-sm font-medium">{f}</span>
+            </motion.div>
+          ))}
+        </div>
+
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
+          viewport={{ once: true }}
+          className="bg-charcoal text-white rounded-3xl p-10 text-center"
+        >
+          <h3 className="text-2xl font-display font-bold mb-3">¿Tu barba merece lo mejor?</h3>
+          <p className="text-gray-400 mb-6">Reserva tu ritual de barba y siéntete renovado.</p>
+          <a
+            href="/#contacto"
+            className="inline-flex items-center gap-2 bg-gold text-white px-8 py-3.5 rounded-full font-bold hover:bg-white hover:text-charcoal transition-all group"
+          >
+            Reservar Cita <ChevronRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+          </a>
+        </motion.div>
+      </div>
+    </section>
+  </>
+);
+
+export default ServicioBarba;

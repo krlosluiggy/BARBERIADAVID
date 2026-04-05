@@ -1,0 +1,7 @@
+{
+  "name": "Luxury Barber Studio",
+  "description": "Landing page moderna para barbería profesional con diseño minimalista, detalles en dorado y sistema de contacto.",
+  "requestFramePermissions": [
+    "geolocation"
+  ]
+}
